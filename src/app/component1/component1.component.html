@@ -1,0 +1,56 @@
+<h2>Welcome {{ name | uppercase }}</h2>
+<p>component1 works!</p>
+
+<input disabled={{isDisabled}} type="text" value = {{name}}>
+<br>
+<input disabled={{isDisabled}} type="text" value = {{name}}>
+<br>
+<input [disabled]="isDisabled" type="text" value = {{name}}>
+<br>
+<input bind-disabled="isDisabled" type="text" value={{name}}>
+<br>
+<button id="something" (click)="onClickk()">Greet</button>  {{greeting}}
+<br>
+<input [(ngModel)]="newName" type="text" placeholder="Enter your name"> 
+<p>Your name is {{newName}}</p>
+<br>
+<h3 *ngIf="isHidden" >Name is hidden</h3>
+<br>
+<div *ngFor = "let color of colors, index as i">
+    <h4>{{i}} {{color}}</h4>
+</div>
+
+<div *ngIf="showTable">
+
+    <table>
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Age</th>
+                <th>Country</th>
+                <th>Icon</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let pi of peopleInfo">
+                <td>{{pi.name | titlePipe:pi.gender}} </td>
+                <td>{{pi.age}}</td>
+                <td>{{pi.country}}</td>
+                <td> <img [src]="imagePath2" alt="Somethingh"></td>
+            </tr>
+        </tbody>
+    </table>
+
+</div>
+
+<br>
+
+<div>
+
+<!-- <input [(ngModel)]="fruits[0]" type="text">
+<p> {{fruits[0]}} </p>  -->
+
+</div>
+
+
+

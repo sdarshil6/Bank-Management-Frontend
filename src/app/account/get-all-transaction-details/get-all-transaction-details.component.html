@@ -1,0 +1,18 @@
+<div class = "table-container">
+    <h1>Transaction Details</h1>
+    <table>
+        <thead>
+    <tr>
+        <th>Description</th>
+        <th>Date Added</th>
+    </tr>
+</thead>
+<tbody>
+    <tr *ngFor="let detail of details" >
+        <td> {{detail.description}} </td>
+        <td> {{detail.dateAdded | date:'dd/MM/yyyy'}} </td>
+    </tr>
+</tbody>
+
+    </table>
+</div>

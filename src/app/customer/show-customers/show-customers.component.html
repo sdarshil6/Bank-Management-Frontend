@@ -1,0 +1,54 @@
+<h1>Customers Data</h1>
+<div class="div1">
+<table>
+    <thead>
+        <tr>
+            <th>Customer ID</th>
+            <th>First Name</th>
+            <th>Last Name</th>
+            <th>Date Of Birth</th>
+            <th>Age</th>
+            <th>Gender</th>
+            <th>Address</th>
+            <th>City</th>
+            <th>State</th>
+            <th>Country</th>
+            <th>Phone Number</th>
+            <th>Postal Code</th>
+            <th>Email Address</th>
+            <th>Marital Status</th>
+            <th>Options</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor = "let cust of responseCustomers" >
+            <td> {{cust.customerId}} </td>
+            <td> {{cust.firstName}} </td>
+            <td> {{cust.lastName}} </td>
+            <td> {{cust.dateOfBirth | date:'dd/MM/yyyy'}} </td>
+            <td> {{cust.age}} </td>
+            <td> {{cust.gender}} </td>
+            <td> {{cust.address}} </td>
+            <td> {{cust.city}} </td>
+            <td> {{cust.state}} </td>
+            <td> {{cust.country}} </td>
+            <td> {{cust.phoneNumber}} </td>
+            <td> {{cust.postalCode}} </td>
+            <td> {{cust.emailAddress}} </td>
+            <td> {{cust.martitalStatus}} </td>
+            <td>
+                <mat-dialog-actions>
+                    <button mat-raised-button class="mat-raised" (click)="viewAllAccounts(cust.customerId)" >View All Accounts</button> 
+                </mat-dialog-actions>
+                <br>
+                <button (click)="deleteCustomer(cust.customerId)" >Delete</button> 
+                <br>
+                <mat-dialog-actions>
+                    <button mat-raised-button class="mat-raised" (click)="updateCustomer(cust.customerId)" >Update</button> 
+                </mat-dialog-actions>
+            </td>
+        </tr>
+    </tbody>
+
+</table>
+</div>

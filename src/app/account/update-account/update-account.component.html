@@ -1,0 +1,57 @@
+
+
+<!-- <form [formGroup]="getAccountNumberForm" (ngSubmit)="getAccountInfo()">
+    <div>
+      <label for="accountNumber">Account Number</label>
+      <input type="number" placeholder="Enter Account Number" id="accountNumber" name="accountNumber" formControlName = "accountNumber"> 
+      <div class="text-danger" *ngIf="getAccountNumberForm.controls?.['accountNumber'].invalid && (getAccountNumberForm.controls?.['accountNumber'].touched || getAccountNumberForm.controls?.['accountNumber'].dirty)">
+        <span *ngIf="getAccountNumberForm.controls?.['accountNumber'].errors?.['required']" >This is required.</span>
+      </div>
+    </div>
+    <div>
+      <button [disabled]="getAccountNumberForm.invalid" [ngClass]="{'dark-button': getAccountNumberForm.invalid}">Get Current Info</button>
+    </div>
+</form> -->
+
+<div class="container">
+
+  
+    
+    <form [formGroup]="updateAccountForm">
+  
+      <h1>Update Account</h1>
+      <div class="form-group">
+        <label for="balance">Balance</label>
+        <input type="number" id="balance" name="balance" placeholder="Enter your balance" formControlName="balance">
+        <div class="text-danger" *ngIf="updateAccountForm.controls?.['balance'].invalid && (updateAccountForm.controls?.['balance'].touched || updateAccountForm.controls?.['balance'].dirty)">
+          <span *ngIf="updateAccountForm.controls?.['balance'].errors?.['required']">This is required. </span>
+          <span *ngIf="updateAccountForm.get('balance').errors?.notValid">Minimum balance must be 500 </span>
+        </div>
+      </div>
+  
+      <div class="form-group">
+        <label for="accountStatus">Account Status</label>
+        <select name="accountStatus" id="accountStatus" formControlName="accountStatus">
+          <option value="" disabled>Select</option>
+          <option value="Active">Active</option>
+          <option value="Frozen">Frozen</option>
+        </select>
+        <div class="text-danger" *ngIf="updateAccountForm.controls?.['accountStatus'].invalid && (updateAccountForm.controls?.['accountStatus'].touched || updateAccountForm.controls?.['accountStatus'].dirty)">
+          <span *ngIf="updateAccountForm.controls?.['accountStatus'].errors?.['required']">This is required </span>
+        </div>
+      </div>
+  
+      <div class="form-group">
+        
+          <button type="submit" (click)="updateAccount()" mat-button [mat-dialog-close]="true" [disabled]="updateAccountForm.invalid" [ngClass]="{'dark-button': updateAccountForm.invalid}">
+            Save Changes
+          </button>
+      
+      </div>
+  
+    </form>
+  </div>
+
+<div>
+    
+</div>

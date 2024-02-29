@@ -1,0 +1,29 @@
+.highlight{
+    color: white;
+}
+
+$primary-color: #f04747; // Primary color for button background
+$button-hover-color: lighten($primary-color, 5%); // Lighten color on hover
+$button-border-radius: 25px; // Increased border radius for a smoother appearance
+$button-padding: 3px 15px; // Increased padding for better visual balance
+$button-font-size: 18px; // Slightly larger font size for better readability
+$button-text-color: white; // Text color for button text
+$button-border: none; // No border for the button
+
+.button {
+  background-color: $primary-color;
+  border-radius: $button-border-radius;
+  padding: $button-padding;
+  font-size: $button-font-size;
+  color: $button-text-color;
+  border: $button-border;
+  cursor: pointer;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2); // Adding a subtle shadow for depth
+  transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
+
+  &:hover {
+    background-color: $button-hover-color;
+    transform: translateY(-2px); // Adding a slight lift on hover
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3); // Increasing shadow on hover
+  }
+}

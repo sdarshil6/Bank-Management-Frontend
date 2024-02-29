@@ -1,0 +1,54 @@
+<div class="container">
+  <h1>Add Account</h1>
+  <form [formGroup]="addAccountForm" (ngSubmit)="addAccount()">
+
+    <div class="form-group">
+      <label for="accountType">Account Type:</label>
+      <select name="accountType" id="accountType" formControlName="accountType">
+        <option value="" disabled>Select</option>
+        <option value="Savings">Savings</option>
+        <option value="Current">Current</option>
+      </select>
+      <div class="text-danger" *ngIf="addAccountForm.controls?.['accountType'].invalid && (addAccountForm.controls?.['accountType'].touched || addAccountForm.controls?.['accountType'].dirty)">
+        <span *ngIf="addAccountForm.controls?.['accountType'].errors?.['required']">This is required </span>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label for="balance">Balance</label>
+      <input type="number" id="balance" name="balance" placeholder="Enter your balance" formControlName="balance">
+      <div class="text-danger" *ngIf="addAccountForm.controls?.['balance'].invalid && (addAccountForm.controls?.['balance'].touched || addAccountForm.controls?.['balance'].dirty)">
+        <span *ngIf="addAccountForm.controls?.['balance'].errors?.['required']">This is required. </span>
+        <span *ngIf="addAccountForm.get('balance').errors?.notValid">Minimum balance must be 500 </span>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label for="accountStatus">Account Status</label>
+      <select name="accountStatus" id="accountStatus" formControlName="accountStatus">
+        <option value="" disabled>Select</option>
+        <option value="Active">Active</option>
+        <option value="Frozen">Frozen</option>
+      </select>
+      <div class="text-danger" *ngIf="addAccountForm.controls?.['accountStatus'].invalid && (addAccountForm.controls?.['accountStatus'].touched || addAccountForm.controls?.['accountStatus'].dirty)">
+        <span *ngIf="addAccountForm.controls?.['accountStatus'].errors?.['required']">This is required </span>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label for="customerId">Customer Id</label>
+      <input type="number" id="customerId" name="customerId" placeholder="Enter customer id" formControlName="customerId">
+      <div class="text-danger" *ngIf="addAccountForm.controls?.['customerId'].invalid && (addAccountForm.controls?.['customerId'].touched || addAccountForm.controls?.['customerId'].dirty)">
+        <span *ngIf="addAccountForm.controls?.['customerId'].errors?.['required']">This is required. </span>
+        <span *ngIf="addAccountForm.get('customerId').errors?.notValid">Customer Id must be greater than 0 </span>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <button class="btn" [disabled]="addAccountForm.invalid" [ngClass]="{'dark-button': addAccountForm.invalid, 'faded-button': addAccountForm.invalid}">
+        Submit
+      </button>
+    </div>
+
+  </form>
+</div>

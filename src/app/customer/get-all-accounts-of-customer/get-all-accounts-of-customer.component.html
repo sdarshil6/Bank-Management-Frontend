@@ -1,0 +1,26 @@
+<h1>Accounts Data</h1>
+<div class="table-container">
+    <table>
+        <thead>
+    <tr>
+        <th>Account Number</th>
+        <th>Account Status</th>
+        <th>Account Type</th>
+        <th>Balance</th>
+        <th>Currrency</th>
+        <th>Rate Of Interest</th>
+    </tr>
+</thead>
+<tbody>
+    <tr *ngFor="let account of accountsResponse" >
+        <td> {{account.accountNumber}} </td>
+        <td> {{account.accountStatus}} </td>
+        <td> {{account.accountType}} </td>
+        <td> {{account.balance}} </td>
+        <td> {{account.currency}} </td>
+        <td> {{account.rateOfInterest}} </td>
+    </tr>
+</tbody>
+
+    </table>
+</div>

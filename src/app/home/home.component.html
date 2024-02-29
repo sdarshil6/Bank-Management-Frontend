@@ -1,0 +1,25 @@
+<div class="d-flex flex-direction-column flex-direction-md-row flex-wrap flex-wrap-md-nowrap">
+    <div id="introduction" class="container-fluid-md  w-md-50 order-md-3 overflow-hidden">
+      <div id="intro-img-holder" class="col-12 row justify-content-center m-0 p-0">
+        <img id="intro-img" class="img-fluid" src="../../assets/bank.jpg" >
+      </div>
+
+    </div>
+    <div class="container-md w-md-50 d-md-flex justify-content-center align-items-center flex-column">
+        <div class="col-md-10 offset-md-1 col-xl-8 offset-xl-0 double-gutter-md-left-padding ">
+          <table>
+            <tr>
+              <th>Account Type </th>
+              <th> Rate Of Interest </th>
+            </tr>
+
+            <tr *ngFor="let row of body">
+              <td>{{row.accountType}}</td>
+              <td>{{row.rateOfInterest}}%</td>
+            </tr>
+          </table>
+        </div>
+    </div>
+  </div>
+
+  

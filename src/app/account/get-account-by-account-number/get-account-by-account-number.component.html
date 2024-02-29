@@ -1,0 +1,46 @@
+<div class="container">
+    <h1>Get Account</h1>
+    <div class="form-group">
+      <label for="acc_number">Enter Account Number</label>
+      <input type="number" id="acc_number" name="acc_number" placeholder="Enter Account Number" [(ngModel)]="accNumber">
+    </div>
+    <button (click)="getAccountByAccountNumber()">Get Account By Account Number</button>
+</div>
+
+<div class = "table-container" *ngIf="isClicked">
+    <table>
+        <thead>
+    <tr>
+        <th>Account Number</th>
+        <th>Account Status</th>
+        <th>Account Type</th>
+        <th>Balance</th>
+        <th>Currrency</th>
+        <th>Rate Of Interest</th>
+        <th>Options</th>
+
+    </tr>
+</thead>
+<tbody>
+    <tr>
+        <td> {{account.accountNumber}} </td>
+        <td> {{account.accountStatus}} </td>
+        <td> {{account.accountType}} </td>
+        <td> {{account.balance}} </td>
+        <td> {{account.currency}} </td>
+        <td> {{account.rateOfInterest}} </td>
+        <td>
+            <mat-dialog-actions>
+                <button mat-raised-button class="mat-raised" (click)="viewTransactionDetails(account.accountNumber)">View Transaction Details</button> 
+            </mat-dialog-actions>
+            <br>
+            <button (click)="deleteAccount(account.accountNumber)" >Delete</button> 
+            <br>
+            <mat-dialog-actions>
+                <button mat-raised-button class="mat-raised" (click)="updateAccount(account.accountNumber)">Update</button> 
+            </mat-dialog-actions>
+        </td>
+    </tr>
+</tbody>
+    </table>
+</div>

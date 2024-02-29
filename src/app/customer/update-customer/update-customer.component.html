@@ -1,0 +1,126 @@
+
+
+<form [formGroup]="updateCustomerForm">
+
+    <h1>Update Customer</h1>
+   
+        <div>
+            <label for="firstName">First Name:</label>
+            <input type="text" placeholder="Enter your first name" id="firstName" name="firstName" formControlName="firstName">
+            <div class="text-danger" *ngIf="updateCustomerForm.controls?.['firstName'].invalid && (updateCustomerForm.controls?.['firstName'].touched || updateCustomerForm.controls?.['firstName'].dirty)" >
+                <span *ngIf="updateCustomerForm.controls?.['firstName'].errors?.['required']">This is required. </span>  
+                <span *ngIf="updateCustomerForm.controls?.['firstName'].errors?.['minlength']">Minimum length must be 2 characters. </span>   
+                <span *ngIf="updateCustomerForm.controls?.['firstName'].errors?.['maxlength']">Maximmum length must be 500 characters. </span> 
+                <span *ngIf="updateCustomerForm.get('firstName').errors.numSym">First Name should not contain any numbers or symbols.</span>  
+            </div>
+        </div>
+       
+        <div>
+            <label for="lastName">Last Name:</label>
+            <input type="text" placeholder="Enter your last name" id="lastName" name="lastName" formControlName="lastName">
+            <div class="text-danger" *ngIf="updateCustomerForm.controls?.['lastName'].invalid && (updateCustomerForm.controls?.['lastName'].touched || updateCustomerForm.controls?.['lastName'].dirty)" >
+                <span *ngIf="updateCustomerForm.controls?.['lastName'].errors?.['required']">This is required </span>     
+                <span *ngIf="updateCustomerForm.controls?.['lastName'].errors?.['maxlength']">Maximmum length must be 500 characters </span>  
+                <span *ngIf="updateCustomerForm.get('lastName').errors.numSym">Last Name should not contain any numbers or symbols.</span> 
+            </div>
+        </div>
+
+        <div>
+            <label for="dateOfBirth">Date of Birth:</label>
+            <input type="date" name="date_of_birth" id="dateOfBirth" formControlName="dateOfBirth" >
+            <div class="text-danger" *ngIf="updateCustomerForm.controls?.['dateOfBirth'].invalid && (updateCustomerForm.controls?.['dateOfBirth'].touched || updateCustomerForm.controls?.['dateOfBirth'].dirty)" >
+                <span *ngIf="updateCustomerForm.controls?.['dateOfBirth'].errors?.['required']">This is required </span>        
+            </div>
+        </div>
+   
+  
+        <div>
+            <label for="gender">Gender:</label>
+            <input type="text" name="gender" id="gender" placeholder="Enter your gender" formControlName="gender" >
+            <div class="text-danger" *ngIf="updateCustomerForm.controls?.['gender'].invalid && (updateCustomerForm.controls?.['gender'].touched || updateCustomerForm.controls?.['gender'].dirty)" >
+                <span *ngIf="updateCustomerForm.controls?.['gender'].errors?.['required']">This is required. </span>     
+                <span *ngIf="updateCustomerForm.get('gender').errors.notValid">Gender should be either male or female </span>   
+            </div>
+        </div>
+
+        <div>
+            <label for="address">Address:</label>
+            <input type="text" name="address" id="address" placeholder="Address" formControlName="address">
+            <div class="text-danger" *ngIf="updateCustomerForm.controls?.['address'].invalid && (updateCustomerForm.controls?.['address'].touched || updateCustomerForm.controls?.['address'].dirty)" >
+                <span *ngIf="updateCustomerForm.controls?.['address'].errors?.['required']">This is required </span>     
+                <span *ngIf="updateCustomerForm.get('address').errors?.['maxlength']"> Maximmum length must be 500 characters</span>   
+            </div>
+        </div>
+
+        <div>
+            <label for="city">City:</label>
+            <input type="text" name="city" id="city" placeholder="City" formControlName="city" >
+            <div class="text-danger" *ngIf="updateCustomerForm.controls?.['city'].invalid && (updateCustomerForm.controls?.['city'].touched || updateCustomerForm.controls?.['city'].dirty)" >
+                <span *ngIf="updateCustomerForm.controls?.['city'].errors?.['required']">This is required </span>     
+                <span *ngIf="updateCustomerForm.get('city').errors?.['maxlength']"> Maximmum length must be 200 characters</span> 
+                <span *ngIf="updateCustomerForm.get('city').errors.numSym">City should not contain any numbers or symbols.</span>  
+            </div>
+        </div>
+    
+   
+        <div>
+            <label for="state">State:</label>
+            <input type="text" name="state" id="state" placeholder="State" formControlName="state">
+            <div class="text-danger" *ngIf="updateCustomerForm.controls?.['state'].invalid && (updateCustomerForm.controls?.['state'].touched || updateCustomerForm.controls?.['state'].dirty)" >
+                <span *ngIf="updateCustomerForm.controls?.['state'].errors?.['required']">This is required </span>     
+                <span *ngIf="updateCustomerForm.get('state').errors?.['maxlength']"> Maximmum length must be 200 characters</span> 
+                <span *ngIf="updateCustomerForm.get('state').errors.numSym">State should not contain any numbers or symbols.</span>  
+            </div>
+        </div>
+
+        <div>
+            <label for="country">Country:</label>
+            <input type="text" name="country" id="country" placeholder="Country" formControlName="country">
+            <div class="text-danger" *ngIf="updateCustomerForm.controls?.['country'].invalid && (updateCustomerForm.controls?.['country'].touched || updateCustomerForm.controls?.['country'].dirty)" >
+                <span *ngIf="updateCustomerForm.controls?.['country'].errors?.['required']">This is required </span>     
+                <span *ngIf="updateCustomerForm.get('country').errors?.['maxlength']"> Maximmum length must be 200 characters</span> 
+                <span *ngIf="updateCustomerForm.get('country').errors.numSym">Country should not contain any numbers or symbols.</span>  
+            </div>
+        </div>
+
+        <div>
+            <label for="phoneNumber">Phone Number:</label>
+            <input type="text" name="phone_number" id="phoneNumber" placeholder="Phone Number" formControlName="phoneNumber" >
+            <div class="text-danger" *ngIf="updateCustomerForm.controls?.['phoneNumber'].invalid && (updateCustomerForm.controls?.['phoneNumber'].touched || updateCustomerForm.controls?.['phoneNumber'].dirty)" >
+                <span *ngIf="updateCustomerForm.controls?.['phoneNumber'].errors?.['required']">This is required. </span>     
+                <span *ngIf="updateCustomerForm.controls?.['phoneNumber'].errors?.['pattern']"> Must be 10 digits</span>   
+            </div>
+        </div>
+   
+   
+        <div>
+            <label for="postalCode">Postal Code:</label>
+            <input type="number" name="postalCode" id="postalCode" placeholder="Postal Code" formControlName="postalCode" >
+            <div class="text-danger" *ngIf="updateCustomerForm.controls?.['postalCode'].invalid && (updateCustomerForm.controls?.['postalCode'].touched || updateCustomerForm.controls?.['postalCode'].dirty)" >
+                <span *ngIf="updateCustomerForm.controls?.['postalCode'].errors?.['required']">This is required </span>     
+                <span *ngIf="updateCustomerForm.get('postalCode').errors?.['pattern']"> Must be 6 digits</span>   
+            </div>
+        </div>
+
+        <div>
+            <label for="emailAddress">Email:</label>
+            <input type="text" name="emailAddress" id="emailAddress" placeholder="Email" formControlName="emailAddress" >
+            <div class="text-danger" *ngIf="updateCustomerForm.controls?.['emailAddress'].invalid && (updateCustomerForm.controls?.['emailAddress'].touched || updateCustomerForm.controls?.['emailAddress'].dirty)" >
+                <span *ngIf="updateCustomerForm.controls?.['emailAddress'].errors?.['required']">This is required </span>     
+                <span *ngIf="updateCustomerForm.get('emailAddress').errors?.['maxlength']"> Maximmum length must be 50 characters</span>   
+            </div>
+        </div>
+
+        <div>
+            <label for="martitalStatus">Marital Status:</label>
+            <input type="text" name="marital_status" id="martitalStatus" placeholder="Marital Status" formControlName="martitalStatus" >
+            <div class="text-danger" *ngIf="updateCustomerForm.controls?.['martitalStatus'].invalid && (updateCustomerForm.controls?.['martitalStatus'].touched || updateCustomerForm.controls?.['martitalStatus'].dirty)" >
+                <span *ngIf="updateCustomerForm.controls?.['martitalStatus'].errors?.['required']">This is required </span>     
+                <span *ngIf="updateCustomerForm.get('martitalStatus').errors.notValid">Single or Married only</span>   
+            </div>
+        </div>
+   
+        <div>
+            <button type="submit" (click)="updateCustomer()" mat-dialog-close="true" mat-button [disabled]="updateCustomerForm.invalid" [ngClass]="{'dark-button': updateCustomerForm.invalid, 'faded-button': updateCustomerForm.invalid}" >Save Changes</button>
+        </div>
+</form>

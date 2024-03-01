@@ -1,10 +1,10 @@
 import { Injectable } from '@angular/core';
 import { Observable} from 'rxjs';
 import { HttpClient} from '@angular/common/http';
-import { DTOCustomerAdd } from './child/DTOCustomerAdd';
+import { DTOCustomerAdd } from './customer/add-customer/DTOCustomerAdd';
 import { Router } from '@angular/router';
 import { ICustomer } from './customer/show-customers/ICustomer';
-import { IAccount } from './child/IAccount';
+import { IAccount } from './account/show-accounts/IAccount';
 import { DTOCustomerGet } from './customer/get-customer-by-id/DTOCustomerGet';
 import { DTOTransactionDetailGet } from './account/get-all-transaction-details/DTOTransactionDetailGet';
 import { ITypeInterest } from './home/ITypeInterest';

@@ -3,7 +3,7 @@ import { CommonDataService } from '../../common-data.service';
 import { Subscription } from 'rxjs';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { ValidateBalance } from '../Validators/balance.validate';
-import { IAccount } from '../../child/IAccount';
+import { IAccount } from '../show-accounts/IAccount';
 import { MAT_DIALOG_DATA } from '@angular/material/dialog';
 import { Router } from '@angular/router';
 

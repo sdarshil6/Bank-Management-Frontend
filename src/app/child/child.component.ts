@@ -3,7 +3,7 @@ import { Output, EventEmitter } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable, Subscription, map } from 'rxjs';
 
-import { DTOCustomerAdd } from './DTOCustomerAdd';
+import { DTOCustomerAdd } from '../customer/add-customer/DTOCustomerAdd';
 
 
 @Component({

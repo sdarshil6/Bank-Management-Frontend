@@ -1,5 +1,5 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
-import { IAccount } from '../../child/IAccount';
+import { IAccount } from '../show-accounts/IAccount';
 import { CommonDataService } from '../../common-data.service';
 import { Subscription } from 'rxjs';
 import { Router } from '@angular/router';

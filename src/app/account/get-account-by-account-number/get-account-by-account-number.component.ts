@@ -1,7 +1,7 @@
 import { Component, OnDestroy } from '@angular/core';
 import { Subscription } from 'rxjs';
 import { CommonDataService } from '../../common-data.service';
-import { IAccount } from '../../child/IAccount';
+import { IAccount } from '../show-accounts/IAccount';
 import { Router } from '@angular/router';
 import { MatDialog } from '@angular/material/dialog';
 import { UpdateAccountComponent } from '../update-account/update-account.component';

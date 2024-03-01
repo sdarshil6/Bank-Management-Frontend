@@ -1,7 +1,7 @@
 import { Component, OnInit, OnDestroy, Inject } from '@angular/core';
 import { CommonDataService } from '../../common-data.service';
 import { Subscription } from 'rxjs';
-import { IAccount } from '../../child/IAccount';
+import { IAccount } from '../../account/show-accounts/IAccount';
 import { Router } from '@angular/router';
 import { MAT_DIALOG_DATA } from '@angular/material/dialog';
 
